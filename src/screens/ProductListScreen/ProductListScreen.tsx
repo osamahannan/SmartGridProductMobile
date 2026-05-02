@@ -1,9 +1,10 @@
+import { styles } from './ProductListScreen.styles';
 // ProductListScreen.tsx
 import React, { useCallback } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import ProductList from '../components/ProductList'
-import useProductsStore from '../features/products/store/useProductsStore'
+import ProductList from '../../components/ProductList/ProductList'
+import useProductsStore from '../../features/products/store/useProductsStore'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function ProductListScreen() {
@@ -43,46 +44,3 @@ export default function ProductListScreen() {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingTop: 6,
-    backgroundColor: '#fff',
-    borderBottomWidth: 0,
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#111',
-  },
-  headerActions: {
-    flexDirection: 'row',
-    gap: 10,
-  },
-  iconButton: {
-    width: 34,
-    height: 34,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  notificationBadge: {
-    position: 'relative',
-  },
-  badge: {
-    position: 'absolute',
-    top: -4,
-    right: -4,
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: '#7c3aed',
-  },
-})

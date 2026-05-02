@@ -1,7 +1,8 @@
+import { styles } from './ProductCard.styles';
 import React, { memo, useEffect, useRef } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import type { Product } from '../types'
+import type { Product } from '../../types'
 
 type Props = {
   product: Product
@@ -131,127 +132,6 @@ function ProductCardComponent({ product, onEdit, updating, highlighted }: Props)
   )
 }
 
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#e6e6e6',
-    shadowColor: '#000',
-    shadowOpacity: 0.04,
-    shadowRadius: 6,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 2,
-    overflow: 'hidden',
-  },
-  touchable: {
-    padding: 11,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    gap: 8,
-    marginBottom: 9,
-  },
-  title: {
-    flex: 1,
-    fontSize: 12,
-    fontWeight: '600',
-    color: '#111',
-    lineHeight: 16,
-  },
-  price: {
-    fontSize: 13,
-    fontWeight: '700',
-    color: '#111',
-    minWidth: 45,
-    textAlign: 'right',
-  },
-  categoryChip: {
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    paddingHorizontal: 9,
-    paddingVertical: 5,
-    borderRadius: 7,
-    backgroundColor: '#f3f0ff',
-    borderWidth: 1,
-    borderColor: '#e9d5ff',
-    marginBottom: 8,
-  },
-  categoryText: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#7c3aed',
-    textTransform: 'capitalize',
-  },
-  ratingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 3,
-    marginBottom: 9,
-  },
-  ratingValue: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: '#111',
-  },
-  ratingCount: {
-    fontSize: 10,
-    color: '#999',
-    fontWeight: '500',
-  },
-  editButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 11,
-    borderRadius: 9,
-    borderWidth: 1.5,
-    borderColor: '#d8d5ff',
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 5,
-    alignSelf: 'flex-end',
-  },
-  editButtonDisabled: {
-    opacity: 0.5,
-  },
-  editButtonText: {
-    fontSize: 10,
-    fontWeight: '600',
-    color: '#7c3aed',
-  },
-  editButtonTextDisabled: {
-    color: '#ccc',
-  },
-  updatingOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 8,
-  },
-  spinner: {
-    width: 18,
-    height: 18,
-    borderRadius: 9,
-    borderWidth: 2,
-    borderColor: '#e6e6e6',
-    borderTopColor: '#7c3aed',
-  },
-  updatingText: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#666',
-  },
-})
+
 
 export default memo(ProductCardComponent)
