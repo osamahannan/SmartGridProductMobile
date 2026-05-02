@@ -25,4 +25,12 @@ export const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginTop: 4,
   },
+  loaderTrack: {
+    width: 150,
+    height: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 2,
+    marginTop: 40,
+    overflow: 'hidden',
+  },
 })

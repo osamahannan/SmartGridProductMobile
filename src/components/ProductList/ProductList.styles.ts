@@ -158,7 +158,58 @@ export const styles = StyleSheet.create({
   skeletonCard: {
     height: 160,
     borderRadius: 14,
-    backgroundColor: '#e6e6e6',
+    backgroundColor: '#f8fafc',
+    borderWidth: 1,
+    borderColor: '#e6e6e6',
+    padding: 11,
+  },
+  skeletonHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    gap: 8,
+    marginBottom: 10,
+  },
+  skeletonName: {
+    height: 36,
+    flex: 1,
+    borderRadius: 8,
+  },
+  skeletonPrice: {
+    width: 56,
+    height: 18,
+    borderRadius: 999,
+  },
+  skeletonCategory: {
+    width: 88,
+    height: 22,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  skeletonRatingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginBottom: 12,
+  },
+  skeletonRatingIcon: {
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+  },
+  skeletonRatingValue: {
+    width: 70,
+    height: 12,
+    borderRadius: 6,
+  },
+  skeletonEditButtonWrap: {
+    marginTop: 'auto',
+    alignItems: 'flex-end',
+  },
+  skeletonEditButton: {
+    width: 84,
+    height: 30,
+    borderRadius: 9,
   },
   emptyState: {
     flex: 1,

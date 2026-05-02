@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import {
   View,
   FlatList,
-  StyleSheet,
   Text,
   TextInput,
   Modal,
@@ -14,6 +13,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Toast from 'react-native-toast-message'
 import type { Product } from '../../types'
 import ProductCard from '../ProductCard/ProductCard'
+import Shimmer from '../Shimmer/Shimmer'
 import useProductsStore from '../../features/products/store/useProductsStore'
 import useLiveUpdates from '../../hooks/useLiveUpdates'
 import useProducts from '../../hooks/useProducts'
@@ -39,13 +39,30 @@ export default function ProductList() {
   const [categoryFilterOpen, setCategoryFilterOpen] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
   const [highlightedProductId, setHighlightedProductId] = useState<number | null>(null)
+  const [hasLoadedInitial, setHasLoadedInitial] = useState(false)
 
   const previousDataRef = useRef(data)
 
   useLiveUpdates()
 
   useEffect(() => {
-    loadProducts()
+    let isMounted = true
+
+    const initialize = async () => {
+      try {
+        await loadProducts()
+      } finally {
+        if (isMounted) {
+          setHasLoadedInitial(true)
+        }
+      }
+    }
+
+    initialize()
+
+    return () => {
+      isMounted = false
+    }
   }, [loadProducts])
 
   // Debounce search
@@ -123,10 +140,26 @@ export default function ProductList() {
 
   const renderSkeleton = () => (
     <FlatList
-      data={Array.from({ length: 6 })}
+      data={Array.from({ length: 10 })}
       renderItem={() => (
         <View style={[styles.item, styles.skeletonItem]}>
-          <View style={styles.skeletonCard} />
+          <View style={styles.skeletonCard}>
+            <View style={styles.skeletonHeaderRow}>
+              <Shimmer style={styles.skeletonName} duration={1150} delay={0} />
+              <Shimmer style={styles.skeletonPrice} duration={1250} delay={120} />
+            </View>
+
+            <Shimmer style={styles.skeletonCategory} duration={1350} delay={220} />
+
+            <View style={styles.skeletonRatingRow}>
+              <Shimmer style={styles.skeletonRatingIcon} duration={1050} delay={320} />
+              <Shimmer style={styles.skeletonRatingValue} duration={1100} delay={380} />
+            </View>
+
+            <View style={styles.skeletonEditButtonWrap}>
+              <Shimmer style={styles.skeletonEditButton} duration={1450} delay={460} />
+            </View>
+          </View>
         </View>
       )}
       keyExtractor={(_, i) => String(i)}
@@ -351,7 +384,7 @@ export default function ProductList() {
       </View>
 
       {/* Product Grid */}
-      {loading && data.length === 0 ? (
+      {!hasLoadedInitial || (loading && data.length === 0) ? (
         renderSkeleton()
       ) : filtered.length === 0 ? (
         renderEmpty()
