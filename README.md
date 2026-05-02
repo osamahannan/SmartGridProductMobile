@@ -4,25 +4,7 @@ SmartGridProductMobile is a React Native app for iOS and Android that showcases 
 
 ## App Snapshots
 
-### 1. Splash Screen
-
-![SmartGridProductMobile Snapshot 1](src/assets/images/snapshot_1.jpeg)
-
-### 2. Loading State with Shimmer Placeholders
-
-![SmartGridProductMobile Snapshot 2](src/assets/images/snapshot_2.jpeg)
-
-### 3. Product Grid View
-
-![SmartGridProductMobile Snapshot 3](src/assets/images/Snapshot_3.jpeg)
-
-### 4. Search and Filters
-
-![SmartGridProductMobile Snapshot 4](src/assets/images/Snapshot_4.jpeg)
-
-### 5. Edit Category Flow
-
-![SmartGridProductMobile Snapshot 5](src/assets/images/Snapshot_5.jpeg)
+![SmartGridProductMobile Snapshot Grid](src/assets/images/snapshot.jpeg)
 
 ## Highlights
 
