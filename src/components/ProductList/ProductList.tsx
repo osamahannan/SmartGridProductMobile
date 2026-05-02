@@ -400,6 +400,7 @@ export default function ProductList() {
           maxToRenderPerBatch={8}
           updateCellsBatchingPeriod={50}
           removeClippedSubviews={true}
+          showsVerticalScrollIndicator={false}
           onRefresh={handleRefresh}
           refreshing={refreshing}
         />
