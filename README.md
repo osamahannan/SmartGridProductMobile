@@ -2,6 +2,28 @@
 
 SmartGridProductMobile is a React Native app for iOS and Android that showcases a polished product grid with search, filtering, sorting, optimistic category edits, undo/redo history, and simulated live updates.
 
+## App Snapshots
+
+### 1. Splash Screen
+
+![SmartGridProductMobile Snapshot 1](src/assets/images/snapshot_1.jpeg)
+
+### 2. Loading State with Shimmer Placeholders
+
+![SmartGridProductMobile Snapshot 2](src/assets/images/snapshot_2.jpeg)
+
+### 3. Product Grid View
+
+![SmartGridProductMobile Snapshot 3](src/assets/images/Snapshot_3.jpeg)
+
+### 4. Search and Filters
+
+![SmartGridProductMobile Snapshot 4](src/assets/images/Snapshot_4.jpeg)
+
+### 5. Edit Category Flow
+
+![SmartGridProductMobile Snapshot 5](src/assets/images/Snapshot_5.jpeg)
+
 ## Highlights
 
 - 2-column product grid with image, title, price, category, and rating
@@ -12,6 +34,14 @@ SmartGridProductMobile is a React Native app for iOS and Android that showcases 
 - Simulated live updates for price and rating
 - Skeleton loading state and toast notifications
 - iOS-style spacing and touch-friendly controls
+
+## Splash Screen
+
+The app includes a custom animated splash screen with the SmartGrid logo, smooth fade/scale motion, and a linear gradient loading bar before navigating into the main product view.
+
+## Shimmer Loaders
+
+Product loading uses reusable linear-gradient shimmer placeholders so the UI feels responsive while data is being fetched. The loaders animate across the card layout to represent the product name, price, category, rating, and action areas.
 
 ## Tech Stack
 
